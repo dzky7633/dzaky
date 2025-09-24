@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>web dzaky</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Website profesional — modern, responsif, dan menarik.">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#7c5cff; --accent-2:#2dd4bf;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px; --container:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background:linear-gradient(180deg,#071025 0%, #071228 40%), var(--bg); color:#e6eef8;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45;
+    }
+    .wrap{max-width:var(--container); margin:48px auto; padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between; gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#071228}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a.cta{background:linear-gradient(90deg,var(--accent),#a78bfa);padding:10px 16px;border-radius:10px;color:white}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:36px}
+    .hero-left h1{font-size:44px;margin:0 0 12px 0;letter-spacing:-0.4px}
+    .hero-left p{color:var(--muted);margin:0 0 20px 0}
+    .cta-row{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:0;font-weight:700;cursor:pointer}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#9f7aea);color:white}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px;border-radius:18px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+    .hero-right{display:flex;flex-direction:column;gap:12px}
+    .stat{display:flex;justify-content:space-between;align-items:center}
+    .stat .num{font-weight:800;font-size:20px}
+    .mock{height:220px;border-radius:12px;background:linear-gradient(180deg,#061227, #08203a);display:flex;flex-direction:column;padding:16px;gap:12px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+    .feature{padding:18px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+    .feature h3{margin:8px 0 6px 0}
+    .muted{color:var(--muted)}
+
+    /* Portfolio */
+    .portfolio{margin-top:36px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .tile{height:140px;border-radius:12px;overflow:hidden;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:flex-end;padding:12px}
+
+    /* Testimonials */
+    .testimonials{margin-top:36px;display:flex;gap:14px}
+    .t-card{flex:1;padding:16px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+
+    /* Contact */
+    .contact{margin-top:36px;display:grid;grid-template-columns:1fr 380px;gap:20px}
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    input::placeholder, textarea::placeholder{color:rgba(230,238,248,0.45)}
+
+    footer{margin-top:40px;padding:20px 0;border-top:1px dashed rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:980px){.hero{grid-template-columns:1fr} .features,.grid{grid-template-columns:repeat(2,1fr)} .contact{grid-template-columns:1fr} }
+    @media (max-width:560px){.features,.grid{grid-template-columns:1fr} header{flex-direction:column;align-items:flex-start} .wrap{margin:20px 14px}}
+
+    /* small animations */
+    .fade-up{transform:translateY(10px);opacity:0;animation:up .7s ease forwards}
+    @keyframes up{to{transform:none;opacity:1}}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="fade-up">
+      <div class="brand">
+        <div class="logo">D</div>
+        <div>
+          <div style="font-weight:700">web dzaky</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px"> coding & desain</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Layanan</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#contact">Hubungi</a>
+        <a href="#" class="cta">Mulai Sekarang</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left fade-up">
+        <h1>namaku dzaky aku bersekolah di smkn 7 batam, aku mengambil jurusan rpl, cita cita ku ingin menjadi game dev</h1>
+        <p class="muted">Kami menghadirkan produk digital profesional — UI/UX, web, dan brand identity yang meningkatkan kepercayaan pelanggan dan konversi.</p>
+        <div class="cta-row">
+          <button class="btn primary">Minta Proposal</button>
+          <button class="btn ghost">Lihat Portofolio</button>
+        </div>
+
+        <div style="display:flex;gap:10px;margin-top:20px;align-items:center">
+          <div class="card" style="display:flex;gap:14px;align-items:center;">
+            <div style="font-weight:800;font-size:18px">+120</div>
+            <div>
+              <div style="font-weight:700">Klien puas</div>
+              <div class="muted" style="font-size:13px">Dalam berbagai industri</div>
+            </div>
+          </div>
+          <div class="card" style="padding:12px;border-radius:12px">
+            <div style="font-weight:800">4.9</div>
+            <div class="muted" style="font-size:13px">Rating rata-rata</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card mock fade-up">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:700">Dashboard Analitik</div>
+            <div class="muted" style="font-size:13px">Realtime</div>
+          </div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:center">
+            <svg width="240" height="120" viewBox="0 0 240 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="240" height="120" rx="8" fill="#061228"/>
+              <rect x="12" y="24" width="40" height="56" rx="6" fill="#0b67ff" opacity="0.9"/>
+              <rect x="62" y="34" width="28" height="46" rx="6" fill="#7c5cff" opacity="0.9"/>
+              <rect x="100" y="14" width="40" height="66" rx="6" fill="#2dd4bf" opacity="0.9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="card stat fade-up">
+          <div>
+            <div style="font-size:13px;color:var(--muted)">Rata-rata waktu pengiriman</div>
+            <div class="num">2–4 minggu</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted" style="font-size:12px">Dari penemuan sampai peluncuran</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="features" class="features">
+      <div class="feature fade-up card">
+        <div style="font-size:24px">🎨</div>
+        <h3>Desain UI/UX</h3>
+        <p class="muted">Antarmuka yang jelas, intuitif, dan ramah pengguna yang mendorong konversi.</p>
+      </div>
+      <div class="feature fade-up card">
+        <div style="font-size:24px">💻</div>
+        <h3>Web Development</h3>
+        <p class="muted">Website cepat, SEO-friendly, dan responsif yang bekerja di semua perangkat.</p>
+      </div>
+      <div class="feature fade-up card">
+        <div style="font-size:24px">🚀</div>
+        <h3>Branding & Strategy</h3>
+        <p class="muted">Strategi brand dan identitas visual yang membuat organisasi Anda menonjol.</p>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+      <h2 style="margin:8px 0">Portofolio</h2>
+      <div class="grid">
+        <div class="tile"> <div><strong>Platform E‑Commerce</strong><div class="muted">UX & Frontend</div></div></div>
+        <div class="tile"> <div><strong>Dashboard Analitik</strong><div class="muted">Visualisasi data</div></div></div>
+        <div class="tile"> <div><strong>Website Perusahaan</strong><div class="muted">Branding & Web</div></div></div>
+
+        <div class="tile"> <div><strong>Aplikasi Mobile</strong><div class="muted">Prototype & UI</div></div></div>
+        <div class="tile"> <div><strong>Landing Campaign</strong><div class="muted">Konversi tinggi</div></div></div>
+        <div class="tile"> <div><strong>Identitas Brand</strong><div class="muted">Logo & Styleguide</div></div></div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="t-card card">
+        <div style="font-weight:700">"Profesional, tepat waktu, dan hasilnya melebihi ekspektasi."</div>
+        <div class="muted" style="margin-top:8px">— Lina, CTO Startup</div>
+      </div>
+      <div class="t-card card">
+        <div style="font-weight:700">"Tim benar-benar paham tujuan bisnis kami."</div>
+        <div class="muted" style="margin-top:8px">— Dika, VP Product</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div style="display:flex;gap:10px;margin-top:12px">
+          <div style="flex:1"><strong>Estimasi harga</strong><div class="muted" style="font-size:13px">Proyek mulai dari IDR 15JT</div></div>
+          <div style="flex:1"><strong>Waktu pengerjaan</strong><div class="muted" style="font-size:13px">2–6 minggu</div></div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Nama lengkap" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="text" id="company" placeholder="Perusahaan (opsional)">
+          <textarea id="message" rows="5" placeholder="Pesan / kebutuhan singkat" required></textarea>
+          <div style="display:flex;gap:8px;align-items:center">
+            <button class="btn primary" type="submit">Kirim Pesan</button>
+            <button class="btn ghost" type="button" onclick="resetForm()">Reset</button>
+          </div>
+          <div id="formMsg" class="muted" style="font-size:13px;margin-top:8px"></div>
+        </form>
+      </aside>
+    </section>
+
+  </div>
+
+  <script>
+    // Small interactive bits
+    function resetForm(){ document.getElementById('contactForm').reset(); document.getElementById('formMsg').textContent=''; }
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var msg = document.getElementById('message').value.trim();
+      if(!name || !email || !msg){ document.getElementById('formMsg').textContent = 'Harap isi semua field yang diperlukan.'; return; }
+      document.getElementById('formMsg').textContent = 'Terima kasih, pesan Anda telah terkirim (demo).';
+      // In production: kirim via fetch ke endpoint server atau layanan email
+      this.reset();
+    });
+
+    // Apply simple fade-up delays
+    document.querySelectorAll('.fade-up').forEach(function(el, i){ el.style.animationDelay = (i*90)+'ms'; });
+  </script>
+</body>
+</html>
